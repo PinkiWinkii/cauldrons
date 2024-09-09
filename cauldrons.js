@@ -1,6 +1,6 @@
-const data = {
+export const data = {
     "cauldrons": {
-        "winter_seasson": [
+        "winter_season": [
             {"id":"JN1AZ4EH3EM175457","name":"Linaceae","magic_description":"ZINC OXIDE","type":"Plexiglass","damaged":false,"color":"Yellow"},
             {"id":"WBAGH83401D593273","name":"Caryophyllaceae","magic_description":"benazepril hydrochloride and hydrochlorothiazide","type":"Brass","damaged":false,"color":"Yellow"},
             {"id":"WAUDFAFL4BA365444","name":"Euphorbiaceae","magic_description":"OCTISALATE, AVOBENZONE, and OCTOCRYLENE","type":"Plastic","damaged":false,"color":"Mauv"},
@@ -516,7 +516,7 @@ const data = {
             {"id":"WBABS53463J774702","name":"Solanaceae","magic_description":"TRIAMCINOLONE ACETONIDE","type":"Wood","damaged":false,"color":"Indigo"},
             {"id":"WBA4A7C59FD840940","name":"Asteraceae","magic_description":"SODIUM PHOSPHATE, MONOBASIC, MONOHYDRATE, SODIUM PHOSPHATE, DIBASIC ANHYDROUS","type":"Glass","damaged":true,"color":"Indigo"}
         ],
-        "summer_seasson": [
+        "summer_season": [
         {"id":"1D7CW5GK4AS440105","name":"Asteraceae","magic_description":"LEVOMENOL","type":"Plexiglass","damaged":true,"color":"Teal"},
         {"id":"WAUHFAFL3FN963198","name":"Liliaceae","magic_description":"Cocoa butter, Phenylephrine HCl, Shark liver oil","type":"Brass","damaged":true,"color":"Mauv"},
         {"id":"1G4GA5GR7FF805220","name":"Asteraceae","magic_description":"Montelukast Sodium","type":"Vinyl","damaged":false,"color":"Blue"},
@@ -571,7 +571,7 @@ const data = {
         {"id":"5UXFG8C59AL361995","name":"Liliaceae","magic_description":"temazepam","type":"Wood","damaged":false,"color":"Orange"},
         {"id":"WAUFFAFL0FA978496","name":"Celastraceae","magic_description":"Dimethicone","type":"Wood","damaged":false,"color":"Teal"}
         ],
-        "spring_seasson": [
+        "spring_season": [
         {"id":"WUADU98E88N046445","name":"Ptychomitriaceae","magic_description":"Sesame","type":"Rubber","damaged":true,"color":"Orange"},
         {"id":"JTHFE2C28D2310863","name":"Malvaceae","magic_description":"Brompheniramine maleate and Dextromethorphan HBr and Pseudoephedrine HCl","type":"Brass","damaged":true,"color":"Mauv"},
         {"id":"3C4PDDAG7ET025851","name":"Ectolechiaceae","magic_description":"Ziprasidone Hydrochloride","type":"Brass","damaged":true,"color":"Khaki"},
@@ -658,7 +658,7 @@ const data = {
         {"id":"1G6DK5E34C0573941","name":"Tetraphidaceae","magic_description":"VERAPAMIL HYDROCHLORIDE","type":"Glass","damaged":false,"color":"Indigo"},
         {"id":"19XFB2F52DE244877","name":"Melaspileaceae","magic_description":"Octinoxate and Oxybenzone","type":"Rubber","damaged":false,"color":"Yellow"}
         ],
-        "autumn_seasson": [
+        "autumn_season": [
         {"id":"1C3CDFCA0DD939998","name":"Asteraceae","magic_description":"Potassium Chloride","type":"Stone","damaged":false,"color":"Blue"},
         {"id":"WAU4GBFB9BN775501","name":"Poaceae","magic_description":"Etodolac","type":"Rubber","damaged":true,"color":"Fuscia"},
         {"id":"WDDHF7GB7EB713965","name":"Poaceae","magic_description":"morphine sulfate","type":"Aluminum","damaged":false,"color":"Maroon"},
@@ -1011,35 +1011,4 @@ const data = {
     }
 }
 
-console.log(data[0]);
 
-// 1.- Mostrar la cantidad total de cauldrons
-
-for(i = 0; i < data.length; i++)
-{
-    for(j = 0; j < data[i].length; j++)
-    {
-        if(j = 0)
-            {
-                console.log(data[i][j]);
-            }
-    }
-}
-
-// 2- Mostrar la cantidad de cauldrons separados por temporada
-
-// 3.- Mostrar la cantidad de Cauldrons rotos agrupados por temporada
-
-// 4.- Mostrar el color de los cauldron con magic_description "Naproxen"
-
-// 5.- Mostrar el total de cauldrons de madera "Wood" rotos, suma de todas las temporadas
-
-// 6.- Mostrar la Id y magic_description de los cauldron llamados "Brassicaceae"
-
-// 7.- Mostrar el porcentaje de cauldrons dañados separados por temporada
-
-// 8.- Mostrar el porcentaje de cauldrons de "Plexiglass" en "winter_seasson"
-
-// 9.- Mostrar el número de cauldrons de color "Orange" en buen estado
-
-// 10.- Mostrar el listado de posibles colores de cauldrons, sin repetir color.
