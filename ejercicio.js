@@ -111,8 +111,46 @@ for (const season in data.cauldrons)
 
 console.log("EJERCICIO 4");
 
+for (const season in data.cauldrons) 
+{                
+    cauldronNaproxenColor(data.cauldrons[season]);
+}
+
+console.log("");
+
 // 5.- Mostrar el total de cauldrons de madera "Wood" rotos, suma de todas las temporadas
 
+console.log("EJERCICIO 5");
+
+let totalBrokenWoodCauldronCounter = 0;
+
+for (const season in data.cauldrons) 
+    {
+
+        //Switch para manejar cada temporada
+        switch (season) 
+        {
+            case 'winter_season':
+                totalBrokenWoodCauldronCounter += cauldronWoodBroken(data.cauldrons[season]);
+              break;
+            case 'summer_season':
+                totalBrokenWoodCauldronCounter += cauldronWoodBroken(data.cauldrons[season]);
+              break;
+            case 'spring_season':
+                totalBrokenWoodCauldronCounter += cauldronWoodBroken(data.cauldrons[season]);
+              break;
+            case 'autumn_season':
+                totalBrokenWoodCauldronCounter += cauldronWoodBroken(data.cauldrons[season]);
+              break;
+
+            default:
+              console.log("Unknown season: " + season);
+        }
+    }
+
+    console.log("Damaged total Wood cauldrons: " + totalBrokenWoodCauldronCounter);
+
+    console.log("");
 // 6.- Mostrar la Id y magic_description de los cauldron llamados "Brassicaceae"
 
 // 7.- Mostrar el porcentaje de cauldrons dañados separados por temporada
@@ -122,3 +160,41 @@ console.log("EJERCICIO 4");
 // 9.- Mostrar el número de cauldrons de color "Orange" en buen estado
 
 // 10.- Mostrar el listado de posibles colores de cauldrons, sin repetir color.
+
+function cauldronNaproxenColor(seasonList)
+{
+    for(let i = 0; i < seasonList.length; i++)
+    {
+        if(seasonList[i].magic_description === "Naproxen")
+            {
+                console.log(seasonList[i].color);
+            }
+    }
+}
+
+function cauldronBrassicaceaeIdsAndDescription(seasonList)
+{
+    for(let i = 0; i < seasonList.length; i++)
+    {
+        if(seasonList[i].name === "Brassicaceae")
+        {
+            console.log(seasonList[i].id);
+            console.log();
+        }
+    }
+}
+
+function cauldronWoodBroken(seasonList)
+{
+    let counter = 0;
+
+    for(let i = 0; i < seasonList.length; i++)
+    {
+        if(seasonList[i].damaged && seasonList[i].type === "Wood")
+            {
+                counter++;
+            }
+    }
+
+    return counter;
+}
