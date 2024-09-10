@@ -19,22 +19,31 @@ console.log("");
 
 console.log("EJERCICIO 2");
 
+let totalWinterCauldrons = 0;
+let totalSummerCauldrons = 0;
+let totalSpringCauldrons = 0;
+let totalAutumnCauldrons = 0;
+
 for (const season in data.cauldrons) 
 {
     //Switch para manejar cada temporada
     switch (season) 
     {
         case 'winter_season':
-          console.log("Total Winter cauldrons: " + data.cauldrons[season].length);
+            totalWinterCauldrons = data.cauldrons[season].length;
+          console.log("Total Winter cauldrons: " + totalWinterCauldrons);
           break;
         case 'summer_season':
-          console.log("Total Summer cauldrons: " + data.cauldrons[season].length);
+            totalSummerCauldrons = data.cauldrons[season].length;
+          console.log("Total Summer cauldrons: " + totalSummerCauldrons);
           break;
         case 'spring_season':
-          console.log("Total Spring cauldrons: " + data.cauldrons[season].length);
+            totalSpringCauldrons = data.cauldrons[season].length;
+          console.log("Total Spring cauldrons: " + totalSpringCauldrons);
           break;
         case 'autumn_season':
-          console.log("Total Autumn cauldrons: " + data.cauldrons[season].length);
+            totalAutumnCauldrons = data.cauldrons[season].length;
+          console.log("Total Autumn cauldrons: " + totalAutumnCauldrons);
           break;
         default:
           console.log("Unknown season: " + season);
@@ -124,7 +133,7 @@ console.log("EJERCICIO 5");
 
 let totalBrokenWoodCauldronCounter = 0;
 
-for (const season in data.cauldrons) 
+    for (const season in data.cauldrons) 
     {
 
         //Switch para manejar cada temporada
@@ -132,19 +141,19 @@ for (const season in data.cauldrons)
         {
             case 'winter_season':
                 totalBrokenWoodCauldronCounter += cauldronWoodBroken(data.cauldrons[season]);
-              break;
+                break;
             case 'summer_season':
                 totalBrokenWoodCauldronCounter += cauldronWoodBroken(data.cauldrons[season]);
-              break;
+                break;
             case 'spring_season':
                 totalBrokenWoodCauldronCounter += cauldronWoodBroken(data.cauldrons[season]);
-              break;
+                break;
             case 'autumn_season':
                 totalBrokenWoodCauldronCounter += cauldronWoodBroken(data.cauldrons[season]);
-              break;
+                break;
 
             default:
-              console.log("Unknown season: " + season);
+                console.log("Unknown season: " + season);
         }
     }
 
@@ -152,8 +161,32 @@ for (const season in data.cauldrons)
 
     console.log("");
 // 6.- Mostrar la Id y magic_description de los cauldron llamados "Brassicaceae"
+    console.log("EJERCICIO 6");
+    console.log("IDs and Magic Descriptions of the cauldrons named Brassicaceae: ");
+
+    for (const season in data.cauldrons) 
+    {
+        cauldronBrassicaceaeIdsAndDescription(data.cauldrons[season])
+    }
+
+    console.log();
 
 // 7.- Mostrar el porcentaje de cauldrons dañados separados por temporada
+
+console.log("EJERCICIO 6");
+console.log("Percentage of each season broken cauldrons: ");
+
+let percentageBrokenWinterCauldron = percentageCalculator(totalWinterCauldrons, winterBrokenCauldronCounter);
+let percentageBrokenSummerCauldron = percentageCalculator(totalSummerCauldrons, summerBrokenCauldronCounter);
+let percentageBrokenSpringCauldron = percentageCalculator(totalSpringCauldrons, springBrokenCauldronCounter);
+let percentageBrokenAutumnCauldron = percentageCalculator(totalAutumnCauldrons, autumnBrokenCauldronCounter);
+
+console.log("Winter broken cauldron: " + percentageBrokenWinterCauldron.toFixed(2) + "%.");
+console.log("Summer broken cauldron: " + percentageBrokenSummerCauldron.toFixed(2) + "%.");
+console.log("Spring broken cauldron: " + percentageBrokenSpringCauldron.toFixed(2) + "%.");
+console.log("Autumn broken cauldron: " + percentageBrokenAutumnCauldron.toFixed(2) + "%.");
+
+console.log();
 
 // 8.- Mostrar el porcentaje de cauldrons de "Plexiglass" en "winter_season"
 
@@ -178,8 +211,7 @@ function cauldronBrassicaceaeIdsAndDescription(seasonList)
     {
         if(seasonList[i].name === "Brassicaceae")
         {
-            console.log(seasonList[i].id);
-            console.log();
+            console.log("ID of the cauldron: " + seasonList[i].id + ". Magic Description: " + seasonList[i].magic_description);
         }
     }
 }
@@ -197,4 +229,9 @@ function cauldronWoodBroken(seasonList)
     }
 
     return counter;
+}
+
+function percentageCalculator(totalNumber, aquiredNumber)
+{
+   return aquiredNumber * 100 / totalNumber;
 }
